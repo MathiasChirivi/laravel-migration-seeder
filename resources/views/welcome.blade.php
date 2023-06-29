@@ -2,24 +2,36 @@
 
 @section('content')
 <div class="container my-3">
-    <h1>Welcome Page</h1>
     <div class="row g-4">
         <div class="col">
             <div>
                 <h1>Treni in partenza oggi</h1>
 
                 @if ($trainsToday->count() > 0)
-                    <ul>
-                        @foreach ($trainsToday as $train)
-                            <li>Compagnia: {{ $train->Compagnia }}</li>
-                            <li>Codice treno: {{ $train->Codice_treno }}</li>
-                            <li>Stazione di partenza: {{ $train->stazione_partenza }}</li>
-                            <li>Stazione di arrivo: {{ $train->stazione_arrivo }}</li>
-                            <li>Data partenza: {{ $train->data_partenza }}</li>
-                            <li>Orario partenza: {{ $train->orario_partenza }}</li>
-                            <br>
-                        @endforeach
-                    </ul>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Compagnia</th>
+                                <th>Codice treno</th>
+                                <th>Stazione di partenza</th>
+                                <th>Stazione di arrivo</th>
+                                <th>Data partenza</th>
+                                <th>Orario partenza</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($trainsToday as $train)
+                                <tr>
+                                    <td>{{ $train->Compagnia }}</td>
+                                    <td>{{ $train->Codice_treno }}</td>
+                                    <td>{{ $train->stazione_partenza }}</td>
+                                    <td>{{ $train->stazione_arrivo }}</td>
+                                    <td>{{ $train->data_partenza }}</td>
+                                    <td>{{ $train->orario_partenza }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 @else
                     <p>Nessun treno in partenza oggi.</p>
                 @endif
@@ -27,23 +39,35 @@
                 <h1>Tutti i treni</h1>
 
                 @if ($allTrains->count() > 0)
-                    <ul class="">
-                        @foreach ($allTrains as $train)
-                            <li>Compagnia: {{ $train->Compagnia }}</li>
-                            <li>Codice treno: {{ $train->Codice_treno }}</li>
-                            <li>Stazione di partenza: {{ $train->stazione_partenza }}</li>
-                            <li>Stazione di arrivo: {{ $train->stazione_arrivo }}</li>
-                            <li>Data partenza: {{ $train->data_partenza }}</li>
-                            <li>Orario partenza: {{ $train->orario_partenza }}</li>
-                            <br>
-                        @endforeach
-                    </ul>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Compagnia</th>
+                                <th>Codice treno</th>
+                                <th>Stazione di partenza</th>
+                                <th>Stazione di arrivo</th>
+                                <th>Data partenza</th>
+                                <th>Orario partenza</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($allTrains as $train)
+                                <tr>
+                                    <td>{{ $train->Compagnia }}</td>
+                                    <td>{{ $train->Codice_treno }}</td>
+                                    <td>{{ $train->stazione_partenza }}</td>
+                                    <td>{{ $train->stazione_arrivo }}</td>
+                                    <td>{{ $train->data_partenza }}</td>
+                                    <td>{{ $train->orario_partenza }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 @else
                     <p>Nessun treno disponibile.</p>
                 @endif
             </div>
         </div>
     </div>
-
 </div>
 @endsection
