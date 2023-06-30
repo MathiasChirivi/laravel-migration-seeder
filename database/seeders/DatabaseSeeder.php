@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        //chiama il seeder Trains 
+        $this->call(TrainsTableSeeder::class);
     }
 }

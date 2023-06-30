@@ -14,7 +14,7 @@ use App\Http\Controllers\Guest\PageController;
 |
 */
 
-Route::get('/', [PageController::class, 'index'])->name('index');
+Route::get('/', [PageController::class, 'index']);
 
 Route::get('/otherpage', function () {
     $links = config('store.someLinks');
