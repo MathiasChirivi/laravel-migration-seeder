@@ -17,6 +17,7 @@
                                 <th>Stazione di arrivo</th>
                                 <th>Data partenza</th>
                                 <th>Orario partenza</th>
+                                <th>In Orario</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,6 +29,11 @@
                                     <td>{{ $train->stazione_arrivo }}</td>
                                     <td>{{ $train->data_partenza }}</td>
                                     <td>{{ $train->orario_partenza }}</td>
+                                    @if ($train->in_orario == 1)
+                                    <td>Il Treno è in orario</td>
+                                    @else
+                                    <td>Il Treno è in ritardo</td>                            
+                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>
@@ -48,6 +54,7 @@
                                 <th>Stazione di arrivo</th>
                                 <th>Data partenza</th>
                                 <th>Orario partenza</th>
+                                <th>In Orario</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -59,7 +66,11 @@
                                     <td>{{ $train->stazione_arrivo }}</td>
                                     <td>{{ $train->data_partenza }}</td>
                                     <td>{{ $train->orario_partenza }}</td>
-                                </tr>
+                                    @if ($train->in_orario == 1)
+                                        <td>Il Treno è in orario</td>
+                                    @else
+                                        <td>Il Treno è in ritardo</td>                            
+                                    @endif
                             @endforeach
                         </tbody>
                     </table>
